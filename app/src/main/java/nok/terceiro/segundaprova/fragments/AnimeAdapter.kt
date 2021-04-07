@@ -18,7 +18,7 @@ class AnimeAdapter:RecyclerView.Adapter<AnimeViewHolder>(){
         return animes.size
     }
     override fun onBindViewHolder(holder: AnimeViewHolder, position: Int) {
-        var anime = animes[position]
+        val anime = animes[position]
         holder.animeName.text = anime.name
         holder.animeAuthor.text = anime.author
     }

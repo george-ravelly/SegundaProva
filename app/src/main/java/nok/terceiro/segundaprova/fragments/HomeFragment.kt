@@ -21,11 +21,11 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        homeViewModel.list.observe(viewLifecycleOwner, Observer {
+        homeViewModel.list.observe(viewLifecycleOwner, {
             listAdapter.animes = it
             Log.i("BANCO", it.toString())
             listAdapter.notifyDataSetChanged()

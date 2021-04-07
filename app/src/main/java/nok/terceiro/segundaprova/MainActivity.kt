@@ -23,8 +23,7 @@ class MainActivity : AppCompatActivity() {
     fun insert() {
         Thread {
             runOnUiThread {
-                var b : Anime = db.animeDao().findById(1)
-                Log.i("TESTE", b.toString())
+                db.animeDao().findById(1)
             }
         }
     }

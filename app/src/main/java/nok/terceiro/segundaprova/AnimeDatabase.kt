@@ -22,7 +22,6 @@ class AnimeDatabase(c: Context){
     inner class Task : AsyncTask<Int?, Int?, Long>() {
         override fun doInBackground(vararg params: Int?): Long? {
             if(params[0] != null) {
-                var id = params[0]
                 anime = db.animeDao().findById(1)
                 return 1
             }
@@ -33,13 +32,13 @@ class AnimeDatabase(c: Context){
 
 
     fun listAll():LiveData<List<Anime>> {
-        var task = Task()
+        val task = Task()
         task.execute(0)
         return animes
     }
 
     fun get(id: Int): Anime {
-        var task = Task()
+        val task = Task()
         task.execute(id)
         return anime
     }
