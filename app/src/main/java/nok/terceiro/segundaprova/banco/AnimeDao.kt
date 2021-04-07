@@ -1,11 +1,13 @@
-package nok.terceiro.segundaprova
+package nok.terceiro.segundaprova.banco
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
+import nok.terceiro.segundaprova.model.Anime
 
 @Dao
 interface AnimeDao {
     @Query("SELECT * FROM tabela_anime")
-    fun getAll(): List<Anime>
+    fun getAll():LiveData<List<Anime>>
 
     @Query("SELECT * FROM tabela_anime WHERE id = :animeId")
     fun findById(animeId: Int): Anime

@@ -1,11 +1,12 @@
 package nok.terceiro.segundaprova
 
 
-import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.room.Room
+import nok.terceiro.segundaprova.model.Anime
+import nok.terceiro.segundaprova.banco.AppDatabase
 
 class MainActivity : AppCompatActivity() {
     val db : AppDatabase by lazy {
@@ -13,38 +14,19 @@ class MainActivity : AppCompatActivity() {
                 this,
                 AppDatabase::class.java,
                 "Animes"
-        ).build()
+        ).allowMainThreadQueries().build()
     }
-
-    private inner class listaAnimesTask : AsyncTask<Int,Int,Int>(){
-        override fun doInBackground(vararg params: Int?):Int {
-            if(params[0] != null){
-                var id = params[0]?.toInt()
-                val anime = id?.let { db.animeDao().findById(it) }
-                return 0
-            }
-            var a = db.animeDao().getAll()
-            return 1
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //insert()
-        find(3)
     }
-
-    private fun find(id: Int) {
-        var task = listaAnimesTask()
-        task.execute(id)
-    }
-
-    private fun insert() {
+    fun insert() {
         Thread {
-            runOnUiThread{
-                db.animeDao().insert(Anime(null, "naruto2", "masashi kishimoto", 2007, 500, "Shonnen", 4.5, "o naruto pode ser duro as vezes...", false))
+            runOnUiThread {
+                var b : Anime = db.animeDao().findById(1)
+                Log.i("TESTE", b.toString())
             }
-        }.start()
+        }
     }
+
 }

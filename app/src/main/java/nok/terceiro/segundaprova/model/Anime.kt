@@ -1,4 +1,4 @@
-package nok.terceiro.segundaprova
+package nok.terceiro.segundaprova.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

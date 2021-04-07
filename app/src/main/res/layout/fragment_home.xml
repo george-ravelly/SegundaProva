@@ -2,15 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".HomeFragment">
-
+        android:orientation="vertical">
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewhome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </FrameLayout>
+            android:layout_height="match_parent"
+            android:background="@color/cardview_light_background"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </LinearLayout>
 </layout>
