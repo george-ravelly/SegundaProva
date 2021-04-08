@@ -7,7 +7,12 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="nok.terceiro.segundaprova.fragments.CadastraFragment"
+        android:name="nok.terceiro.segundaprova.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/cadastra_fragment" />
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/cadastraFragment"
+        android:name="nok.terceiro.segundaprova.fragments.CadastraFragment"
+        android:label="@string/Cadastrar"
+        tools:layout="@layout/cadastra_fragment"/>
 </navigation>
