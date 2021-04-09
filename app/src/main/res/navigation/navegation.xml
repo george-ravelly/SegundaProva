@@ -8,11 +8,43 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="nok.terceiro.segundaprova.fragments.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_fragment_home_to_cadastra"
+            app:destination="@id/cadastraFragment" />
+        <action
+            android:id="@+id/action_fragment_home_to_detalhes"
+            app:destination="@id/detalhesFragment">
+        </action>
+        <action
+            android:id="@+id/action_fragment_home_to_altera"
+            app:destination="@id/alteraFragment">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/detalhesFragment"
+        android:name="nok.terceiro.segundaprova.fragments.DetalhesFragment"
+        android:label="detalhes"
+        tools:layout="@layout/fragment_detalhes">
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="1"/>
+    </fragment>
     <fragment
         android:id="@+id/cadastraFragment"
         android:name="nok.terceiro.segundaprova.fragments.CadastraFragment"
         android:label="@string/Cadastrar"
         tools:layout="@layout/cadastra_fragment"/>
+    <fragment
+        android:id="@+id/alteraFragment"
+        android:name="nok.terceiro.segundaprova.fragments.AlteraFragment"
+        android:label="@string/altera"
+        tools:layout="@layout/altera_fragment">
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="1"/>
+    </fragment>
 </navigation>

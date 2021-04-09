@@ -7,13 +7,13 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "tabela_anime")
 data class Anime(
     @PrimaryKey(autoGenerate = true) val id: Int?,
-    @ColumnInfo val name:String?,
-    @ColumnInfo val author:String?,
-    @ColumnInfo val year: Int?,
-    @ColumnInfo val episodes: Int?,
-    @ColumnInfo val genry:String?,
-    @ColumnInfo val rating: Double,
-    @ColumnInfo val description: String?,
+    @ColumnInfo var name:String?,
+    @ColumnInfo var author:String?,
+    @ColumnInfo var year: Int?,
+    @ColumnInfo var episodes: Int?,
+    @ColumnInfo var genry:String?,
+    @ColumnInfo var rating: Double,
+    @ColumnInfo var description: String?,
     @ColumnInfo var onGoing: Boolean = false){
 
 }

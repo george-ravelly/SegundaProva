@@ -16,7 +16,7 @@ class CadastraFragment : Fragment() {
     private lateinit var viewModel: CadastraViewModel
     private lateinit var binding: CadastraFragmentBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         viewModel = ViewModelProvider(this).get(CadastraViewModel::class.java)
         binding = DataBindingUtil.inflate(inflater, R.layout.cadastra_fragment, container, false)
         binding.lifecycleOwner = this

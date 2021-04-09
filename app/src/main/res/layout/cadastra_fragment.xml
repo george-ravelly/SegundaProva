@@ -132,8 +132,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ongoing"
                     tools:ignore="UseSwitchCompatOrMaterialXml"
-                    android:onClick="@{() -> viewmodel.onGoingChange()}"
-                    />
+                    android:checked="@={viewmodel.onGoing}" />
 
             </LinearLayout>
 
@@ -180,6 +179,7 @@
                 android:layout_height="wrap_content"
                 android:max="5"
                 android:numStars="5"
+                android:rating="@={viewmodel.rating}"
                 />
         </LinearLayout>
 

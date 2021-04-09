@@ -13,15 +13,9 @@ class CadastraViewModel(application: Application) : AndroidViewModel(application
     var year = ""
     var episodes = ""
     var genry = ""
-    var rating = 0.0
+    var rating = 0.0F
     var description = ""
     var onGoing = false
-
-
-    fun onGoingChange(){
-        onGoing = !onGoing
-        Log.i("onGoing", onGoing.toString())
-    }
 
     private val db : AppDatabase by lazy {
         Room.databaseBuilder(
@@ -30,9 +24,11 @@ class CadastraViewModel(application: Application) : AndroidViewModel(application
                 "Animes"
         ).allowMainThreadQueries().build()
     }
+
     fun save(){
         Log.i("CAD", "entrou")
-        val anime = Anime(null, name, author, year.toInt(), episodes.toInt(), genry, rating, description, onGoing)
+        val anime = Anime(null, name, author, year.toInt(), episodes.toInt(), genry, rating.toDouble(), description, onGoing)
         db.animeDao().insert(anime)
     }
+
 }

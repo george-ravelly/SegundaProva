@@ -14,4 +14,8 @@
     <string name="description">Description</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="altera">Alterar</string>
+    <string name="buttonCadastrar">botão cadastrar</string>
+    <string name="Sobre">Sobre</string>
+    <string name="anibase">aniBase</string>
 </resources>
