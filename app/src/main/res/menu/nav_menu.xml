@@ -5,7 +5,7 @@
         android:id="@+id/cadastraFragment"
         android:title="@string/Cadastrar"
         android:icon="@android:drawable/ic_menu_add"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/sobreFragment"
         android:title="@string/Sobre"

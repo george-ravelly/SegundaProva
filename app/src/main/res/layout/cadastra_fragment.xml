@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="nok.terceiro.segundaprova.fragments.CadastraViewModel"/>
+            type="nok.terceiro.segundaprova.fragments.viewmodel.CadastraViewModel"/>
     </data>
     <LinearLayout
         android:layout_width="match_parent"

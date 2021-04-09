@@ -1,19 +1,17 @@
 package nok.terceiro.segundaprova.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import nok.terceiro.segundaprova.R
 import nok.terceiro.segundaprova.databinding.FragmentHomeBinding
+import nok.terceiro.segundaprova.fragments.viewmodel.HomeViewModel
 
 
 class HomeFragment : Fragment() {
@@ -32,31 +30,23 @@ class HomeFragment : Fragment() {
             listAdapter.animes = it
             listAdapter.notifyDataSetChanged()
         })
-        val navController = Navigation.findNavController((activity as AppCompatActivity),R.id.myNavHostFragment)
-        NavigationUI.setupActionBarWithNavController((activity as AppCompatActivity), navController,binding.drawerLayout)
-        NavigationUI.setupWithNavController(binding.navView, navController)
 
         recyclerViewUp(listAdapter)
         binding.recyclerviewhome.addOnItemTouchListener(RecyclerViewClickListener(requireContext(), binding.recyclerviewhome,
             object: RecyclerViewClickListener.OnItemClickListener{
-                override fun onItemClick(v: View, position: Int) {
+                override fun onItemClick(view: View, position: Int) {
                     val action = HomeFragmentDirections.actionFragmentHomeToDetalhes(position+1)
                     Navigation.findNavController(binding.recyclerviewhome).navigate(action)
                 }
-                override fun onItemLongClick(v: View, position: Int) {
+                override fun onItemLongClick(view: View, position: Int) {
                     val action = HomeFragmentDirections.actionFragmentHomeToAltera(position+1)
                     Navigation.findNavController(binding.recyclerviewhome).navigate(action)
                 }
         }))
 
-        setHasOptionsMenu(true)
         return binding.root
     }
 
-    fun onSupportNavigateUp(): Boolean {
-        val navController = Navigation.findNavController((activity as AppCompatActivity), R.id.myNavHostFragment)
-        return NavigationUI.navigateUp(navController, binding.drawerLayout)
-    }
 
     fun recyclerViewUp(adapter:AnimeAdapter){
         binding.recyclerviewhome.adapter = adapter

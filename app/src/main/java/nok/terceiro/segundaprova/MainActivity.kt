@@ -3,29 +3,25 @@ package nok.terceiro.segundaprova
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.room.Room
-import nok.terceiro.segundaprova.model.Anime
-import nok.terceiro.segundaprova.banco.AppDatabase
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
+import nok.terceiro.segundaprova.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    val db : AppDatabase by lazy {
-        Room.databaseBuilder(
-                this,
-                AppDatabase::class.java,
-                "Animes"
-        ).allowMainThreadQueries().build()
-    }
+    lateinit var binding:ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        val navController = Navigation.findNavController(this, R.id.myNavHostFragment)
+        NavigationUI.setupActionBarWithNavController(this, navController, binding.drawerLayout)
+        NavigationUI.setupWithNavController(binding.navView, navController)
     }
-    fun insert() {
-        Thread {
-            runOnUiThread {
-                db.animeDao().findById(1)
-            }
-        }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = Navigation.findNavController(this, R.id.myNavHostFragment)
+        return NavigationUI.navigateUp(navController, binding.drawerLayout)
     }
 
 }

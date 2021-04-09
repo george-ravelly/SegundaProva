@@ -1,4 +1,4 @@
-package nok.terceiro.segundaprova.model
+package nok.terceiro.segundaprova.fragments.viewmodel
 
 import android.annotation.SuppressLint
 import android.app.Application
@@ -6,6 +6,7 @@ import android.os.AsyncTask
 import androidx.lifecycle.AndroidViewModel
 import androidx.room.Room
 import nok.terceiro.segundaprova.banco.AppDatabase
+import nok.terceiro.segundaprova.model.Anime
 
 
 @Suppress("DEPRECATION")

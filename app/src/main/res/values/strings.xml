@@ -18,4 +18,7 @@
     <string name="buttonCadastrar">botão cadastrar</string>
     <string name="Sobre">Sobre</string>
     <string name="anibase">aniBase</string>
+    <string name="logo">logo</string>
+    <string name="dev">Dev George</string>
+    <string name="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus, enim vitae bibendum gravida, magna nibh tristique enim, id placerat ex ex gravida leo. Phasellus eget maximus ipsum, vel vulputate nibh. Phasellus vulputate massa vitae ante pellentesque faucibus. Morbi condimentum, sem sit amet vulputate gravida, sem est dapibus ligula, sit amet sodales dolor lectus a ante. Donec blandit sapien sed ex molestie rhoncus. Nullam sollicitudin semper bibendum. Aliquam pharetra bibendum ex, eget tempus tellus venenatis quis. Nam a ultrices quam. "</string>
 </resources>

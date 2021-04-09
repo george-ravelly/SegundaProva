@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="nok.terceiro.segundaprova.model.AnimeViewModel" />
+            type="nok.terceiro.segundaprova.fragments.viewmodel.AnimeViewModel" />
     </data>
 
     <LinearLayout

@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.navArgs
 import nok.terceiro.segundaprova.R
 import nok.terceiro.segundaprova.databinding.AlteraFragmentBinding
+import nok.terceiro.segundaprova.fragments.viewmodel.AlteraViewModel
 
 class AlteraFragment : Fragment() {
     private lateinit var viewModel: AlteraViewModel

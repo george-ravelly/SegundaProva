@@ -30,6 +30,18 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="S">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="alteraFragment">
                     <value>
                       <LayoutPositions>
@@ -83,6 +95,11 @@
                               </value>
                             </entry>
                             <entry key="action_fragment_home_to_cadastra">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_fragment_home_to_detalhes">
                               <value>
                                 <LayoutPositions />
                               </value>

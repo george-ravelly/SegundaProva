@@ -1,4 +1,4 @@
-package nok.terceiro.segundaprova.fragments
+package nok.terceiro.segundaprova.fragments.viewmodel
 
 import android.app.Application
 import android.util.Log
@@ -29,6 +29,7 @@ class CadastraViewModel(application: Application) : AndroidViewModel(application
         Log.i("CAD", "entrou")
         val anime = Anime(null, name, author, year.toInt(), episodes.toInt(), genry, rating.toDouble(), description, onGoing)
         db.animeDao().insert(anime)
+        //HomeFragment().listAdapter.notifyDataSetChanged()
     }
 
 }

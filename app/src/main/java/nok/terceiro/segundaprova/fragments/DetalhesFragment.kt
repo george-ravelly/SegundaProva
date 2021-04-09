@@ -1,18 +1,16 @@
 package nok.terceiro.segundaprova.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavController
 import androidx.navigation.fragment.navArgs
 import nok.terceiro.segundaprova.R
 import nok.terceiro.segundaprova.databinding.FragmentDetalhesBinding
-import nok.terceiro.segundaprova.model.AnimeViewModel
+import nok.terceiro.segundaprova.fragments.viewmodel.AnimeViewModel
 
 class DetalhesFragment : Fragment() {
     private lateinit var viewModel: AnimeViewModel

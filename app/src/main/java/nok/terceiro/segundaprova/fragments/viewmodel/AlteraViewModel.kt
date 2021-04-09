@@ -1,6 +1,6 @@
 @file:Suppress("DEPRECATION")
 
-package nok.terceiro.segundaprova.fragments
+package nok.terceiro.segundaprova.fragments.viewmodel
 
 import android.annotation.SuppressLint
 import android.app.Application
@@ -46,6 +46,7 @@ class AlteraViewModel(application: Application) : AndroidViewModel(application) 
     fun atualizar(){
         var anime = Anime(id, name, author, year.toInt(), episodes.toInt(), genry, rating.toDouble(), description, onGoing)
         UpAsync(db, anime).execute().get()
+        //HomeFragment().listAdapter.notifyDataSetChanged()
     }
 
     @SuppressLint("StaticFieldLeak")

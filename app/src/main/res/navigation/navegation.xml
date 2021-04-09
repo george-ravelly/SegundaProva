@@ -38,6 +38,11 @@
         android:label="@string/Cadastrar"
         tools:layout="@layout/cadastra_fragment"/>
     <fragment
+        android:id="@+id/sobreFragment"
+        android:name="nok.terceiro.segundaprova.fragments.SobreFragment"
+        android:label="@string/Sobre"
+        tools:layout="@layout/fragment_sobre"/>
+    <fragment
         android:id="@+id/alteraFragment"
         android:name="nok.terceiro.segundaprova.fragments.AlteraFragment"
         android:label="@string/altera"

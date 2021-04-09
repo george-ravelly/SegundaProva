@@ -1,4 +1,4 @@
-package nok.terceiro.segundaprova.fragments
+package nok.terceiro.segundaprova.fragments.viewmodel
 
 import android.annotation.SuppressLint
 import android.app.Application
