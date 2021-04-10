@@ -36,17 +36,25 @@
         android:id="@+id/cadastraFragment"
         android:name="nok.terceiro.segundaprova.fragments.CadastraFragment"
         android:label="@string/Cadastrar"
-        tools:layout="@layout/cadastra_fragment"/>
+        tools:layout="@layout/cadastra_fragment">
+        <action
+            android:id="@+id/action_fragment_cadastra_to_home"
+            app:destination="@id/homeFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/sobreFragment"
         android:name="nok.terceiro.segundaprova.fragments.SobreFragment"
         android:label="@string/Sobre"
-        tools:layout="@layout/fragment_sobre"/>
+        tools:layout="@layout/fragment_sobre">
+    </fragment>
     <fragment
         android:id="@+id/alteraFragment"
         android:name="nok.terceiro.segundaprova.fragments.AlteraFragment"
         android:label="@string/altera"
         tools:layout="@layout/altera_fragment">
+        <action
+            android:id="@+id/action_fragment_altera_to_home"
+            app:destination="@id/homeFragment"/>
         <argument
             android:name="id"
             app:argType="integer"

@@ -1,13 +1,12 @@
 package nok.terceiro.segundaprova.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import nok.terceiro.segundaprova.R
 import nok.terceiro.segundaprova.databinding.FragmentHomeBinding
@@ -43,7 +42,7 @@ class HomeFragment : Fragment() {
                     Navigation.findNavController(binding.recyclerviewhome).navigate(action)
                 }
         }))
-
+        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -51,5 +50,20 @@ class HomeFragment : Fragment() {
     fun recyclerViewUp(adapter:AnimeAdapter){
         binding.recyclerviewhome.adapter = adapter
         binding.recyclerviewhome.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_options, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.option_menu_button){
+            var dialog = DialogFragment(R.layout.home_ajuda)
+            dialog.show(requireActivity().supportFragmentManager, "home ajuda")
+        }
+
+        return NavigationUI.onNavDestinationSelected(item, Navigation.findNavController(requireView()))||
+                super.onOptionsItemSelected(item)
     }
 }

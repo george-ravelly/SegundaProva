@@ -215,7 +215,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="45dp"
                     android:text="@string/save"
-                    android:onClick="@{() -> viewmodel.atualizar()}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
